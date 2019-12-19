@@ -73,12 +73,12 @@ func readConfig(filePath string) (error, [][]string) {
 	reader := bufio.NewReader(file)
 	for {
 		line, err := reader.ReadString('\n')
-		if err != nil {
-			break
-		}
 		valid, decoded := checkRule(line)
 		if valid {
 			configs = append(configs, decoded)
+		}
+		if err != nil {
+			break
 		}
 	}
 	if len(configs)== 0{

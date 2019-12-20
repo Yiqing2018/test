@@ -178,8 +178,10 @@ android {
         }
     }
 }
+apply plugin: 'com.android.application'
 
 dependencies {
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
